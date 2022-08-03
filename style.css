@@ -1,0 +1,71 @@
+/**
+Theme Name: Моя первая темы
+Author: Кочергин
+*/
+
+body {
+    background: #F2F1EC;
+    max-width: 700px;
+    margin: 2em auto;
+}
+
+.header, .footer {
+    margin: 2em auto;
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.menu_container{
+    width: 100vw;
+}
+.menu{
+    margin: 10px auto;
+    padding: 4px;
+    display: flex;
+    justify-content: space-around;
+    background: #5c636a;
+}
+.menu li {
+    width: 10%;
+    display: flex;
+    margin-right: 5px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 15px;
+    margin: auto;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+
+}
+
+.menu li:hover > .sub-menu {
+    display:block;
+    top: 9.3%;
+}
+
+.sub-menu li {
+    width: 10%;
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+    background: #5c636a;
+    margin: 2px;
+}
