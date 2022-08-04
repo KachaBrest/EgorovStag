@@ -1,6 +1,6 @@
 let apiURL = 'http://kacha/wp-json';
 let parent_div = document.getElementById('lazy_search')
-let index = 3;
+let index = 1;
 
 
 function newPost(element){
@@ -17,14 +17,19 @@ function newPost(element){
 
     parent_div.appendChild(div);
 
+    if(element.title.rendered == 'Title 1'){
+        button.style.display = 'none';
+    }
+
 }
 
-fetch(  apiURL + '/wp/v2/posts?page=1' )
+fetch(  apiURL + '/wp/v2/posts?page='+index )
     .then( response => {
         if ( response.status !== 200 ) {
             throw new Error( 'Problem! Status Code: ' + response.status );
         }
         response.json().then( response  => {
+            index++;
             posts = response
             console.log( posts ); // выведем в консоль
             posts.forEach( el => {
@@ -42,12 +47,13 @@ fetch(  apiURL + '/wp/v2/posts?page=1' )
 
 let button = document.getElementById('lazy_btn')
 button.onclick = function(event) {
-    fetch(  apiURL + '/wp/v2/posts?page=2' )
+    fetch(  apiURL + '/wp/v2/posts?page='+index )
         .then( response => {
             if ( response.status !== 200 ) {
                 throw new Error( 'Problem! Status Code: ' + response.status );
             }
             response.json().then( response  => {
+                index++
                 posts = response
                 posts.forEach( el => {
                     newPost(el)
