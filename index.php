@@ -1,4 +1,15 @@
 <?php
+// 1. Require file systems
+define('ROOT',dirname(__FILE__));
+require_once (ROOT.'./components/Router.php');
+
+// 2 Router
+
+$router = new Router();
+$router->run();
+?>
+
+<?php
 /**
  * The main template file
  *
@@ -17,22 +28,7 @@
 get_header();
 ?>
 
-<div class="middle">
-    <?php
-    // if posts
-    if ( have_posts() ){
-        while ( have_posts() ){
-            the_post();
-            echo '<h3><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3>';
-            echo get_the_excerpt();
-        }
-    }
-    // if not posts
-    else{
-        require_once ('lib/post_link.php');
-    }
-    ?>
-</div>
+
 
 <?php get_footer(); ?>
 

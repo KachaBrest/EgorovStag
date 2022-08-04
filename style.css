@@ -83,6 +83,7 @@ ul {
 .middle{
     width: 100vw;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .middle h1{
@@ -110,3 +111,40 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+.my_post{
+    margin: 2% auto;
+    width: 70%;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.my_post h3{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    padding: 11px;
+}
+
+.wp-block-image{
+    border-radius: 1%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.wp-block-image img{
+    max-width: 70%;
+}
+
+.wp-block-image figcaption{
+    display: none;
+}
+
+.my_post h3 a{
+    text-decoration: none;
+    color: #5c636a;
+}
+

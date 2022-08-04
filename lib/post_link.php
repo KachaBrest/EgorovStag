@@ -9,16 +9,10 @@ $psts  = get_posts( array(
     'post_type' => 'location-post',
 ) );
 
-//echo '<pre>';
-//var_dump($psts);
-//echo'</pre>';
-//echo '<br>';
-
 foreach( $psts as $pst ){
     if($pst->post_name == $link) {
 
         // начало эксперемента
-
         $cur_terms = get_the_terms( $pst->ID, 'destination' );
         if( is_array( $cur_terms ) ){
             echo '<div class="services">';
@@ -27,7 +21,6 @@ foreach( $psts as $pst ){
             }
             echo '</div>';
         }
-
         //конец эксперемента
 
         echo '<h1>'. $pst->post_title .'</h1>';
