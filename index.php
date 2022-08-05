@@ -15,6 +15,7 @@ $router->run();
 
 get_header();
 
+
 require_once ('lib/post_link.php');
 
 get_footer();
