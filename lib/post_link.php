@@ -5,15 +5,14 @@ $url = substr($url,0,-1);
 $link = substr(strrchr($url, '/'), 1 );
 
 //get info post
-$psts  = get_posts( array(
+$posts  = get_posts( array(
     'post_type' => 'location-post',
 ) );
 
-foreach( $psts as $pst ){
-    if($pst->post_name == $link) {
+foreach( $posts as $post ){
+    if($post->post_name == $link) {
 
-        // начало эксперемента
-        $cur_terms = get_the_terms( $pst->ID, 'destination' );
+        $cur_terms = get_the_terms( $post->ID, 'destination' );
         if( is_array( $cur_terms ) ){
             echo '<div class="services">';
             foreach( $cur_terms as $cur_term ){
@@ -21,10 +20,9 @@ foreach( $psts as $pst ){
             }
             echo '</div>';
         }
-        //конец эксперемента
 
-        echo '<h1>'. $pst->post_title .'</h1>';
-        echo '<div class="link_content">'. $pst->post_content . '</div>';
+        echo '<h1>'. $post->post_title .'</h1>';
+        echo '<div class="link_content">'. $post->post_content . '</div>';
 
     }
 }

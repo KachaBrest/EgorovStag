@@ -2,19 +2,30 @@
 
 add_action('after_setup_theme', 'theme_register_nav_menu');
 
-    query_posts('posts_per_page=3');
-    //menu.php
-    require_once ('lib/menu.php');
+define( 'THEME_TEXTDOMAIN', 'ea' );
 
-    //post-type
-    require_once ('lib/post-type.php');
+require_once ('lib/api.php');
+// bootstrap
+require_once ('lib/bootstrap.php');
 
-    //taxonomies
-    require_once ('lib/taxonomies.php');
+//menu.php
+require_once ('lib/menu.php');
 
-    // bootstrap
-    require_once ('lib/bootstrap.php');
+//post-type
+require_once('lib/myPost-type.php');
 
-    require_once ('lib/My_Walker_Nav_Menu.php');
+require_once ('lib/services.php');
 
-    require_once ('lib/api.php');
+//taxonomies
+require_once ('lib/taxonomies.php');
+
+require_once ('lib/instagram.php');
+require_once('lib/Theme_settings.php');
+
+require_once('lib/Walker_Menu.php');
+
+
+
+
+
+

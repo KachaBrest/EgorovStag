@@ -38,6 +38,7 @@ wp_nav_menu( [
     'menu'            => '',
     'menu_class'      => 'menu',
     'menu_id'         => 'menu',
-    'walker'          => new My_Walker_Nav_Menu(),
 ] );
 ?>
+
+<div id="post-title"></div>
